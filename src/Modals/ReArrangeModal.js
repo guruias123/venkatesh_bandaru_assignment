@@ -4,6 +4,7 @@ import { CFormCheck, CTab, CTable } from '@coreui/react';
 const ReArrangeModal = (props) => {
 
   const [list, setList] = useState(props.data);
+  const [newColumns, setNewColumns] = useState(props.data);
   useEffect(() => {
     console.log("rearrange modal props", props);
   }, [])
@@ -36,9 +37,37 @@ const ReArrangeModal = (props) => {
   }
 
   const handleApply = () => {
-    props.setData(list);
+    if(list.length !== newColumns.length){
+      props.setData(newColumns)
+    }else{
+      props.setData(list);
+    }
     props.setOpen(!props.open);
   }
+
+  // const onSelectOptions = (event, column) => {
+  //   console.log("selected event", event.target.checked);
+  //   const filteredList = [list];
+  //   if(event.target.checked === false){
+  //     filteredList.pop(column)
+  //   }
+  //   console.log("filtere options", filteredList);
+  // }
+
+  const onSelectOptions = (event, column) => {
+    console.log("selected event", event.target.checked);
+  
+    let filteredList;
+    if (event.target.checked === false) {
+      filteredList = newColumns.filter(item => item !== column);
+      setNewColumns(filteredList)
+    } else {
+      filteredList = [...newColumns, column];  // Assuming you want to add back the column if checked
+      setNewColumns(filteredList)
+    }
+  
+    console.log("filtered options", filteredList);
+  };
   
   return (
         <div className='absolute top-full right-0 bottom-0 z-10 bg-white p-4 rouded shadow-md flex flex-col gap-4 h-[60vh] border-[#E2E8F0]'>
@@ -60,7 +89,7 @@ const ReArrangeModal = (props) => {
                 >
                 {/* <CFormCheck id="flexCheckDefault" checked /> */}
                 {/* <input type='checkbox' className='bg-[#000000]' checked /> */}
-                <input type="checkbox" id="customCheckbox" className="bg-white border-gray-300 rounded focus:ring-0 custom-checkbox" defaultChecked />
+                <input type="checkbox" id="customCheckbox" className="bg-white border-gray-300 rounded focus:ring-0 custom-checkbox" defaultChecked onClick={(e) => console.log("checked", e.target.checked)} onChange={(e) => onSelectOptions(e, column)} />
                 <div className='py-1 border-[1px] border-[#E2E8F0] w-48 rounded pl-2 text-[#334155] text-[14px] font-medium'>
                   {column.headerName}
                 </div>

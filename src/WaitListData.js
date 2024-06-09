@@ -376,53 +376,53 @@ const WaitListData = () => {
                       />
                     </TableCell>
                     {
-                      columns[0].field === 'status' ? 
+                      columns[0] && columns[0].field === 'status' ? 
                       <TableCell align="left">
                         <Status data={row[columns[0].field]} />
                       </TableCell> :
-                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{row[columns[0].field]}</TableCell>
+                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{columns[0] && row[columns[0].field]}</TableCell>
                     }
                     {
-                      columns[1].field === 'status' ? 
+                      columns[1] && columns[1].field === 'status' ? 
                       <TableCell align="left">
                         <Status data={row[columns[1].field]} />
                       </TableCell> :
-                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{row[columns[1].field]}</TableCell>
+                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{columns[1] && row[columns[1].field]}</TableCell>
                     }
                     {
-                      columns[2].field === 'status' ? 
+                      columns[2] && columns[2].field === 'status' ? 
                       <TableCell align="left">
                         <Status data={row[columns[2].field]} />
                       </TableCell> :
-                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{row[columns[2].field]}</TableCell>
+                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{columns[1] && row[columns[2].field]}</TableCell>
                     }
                     {
-                      columns[3].field === 'status' ? 
+                      columns[3] && columns[3].field === 'status' ? 
                       <TableCell align="left">
                         <Status data={row[columns[3].field]} />
                       </TableCell> :
-                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{row[columns[3].field]}</TableCell>
+                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{columns[3] && row[columns[3].field]}</TableCell>
                     }
                     {
-                      columns[4].field === 'status' ? 
+                      columns[4] && columns[4].field === 'status' ? 
                       <TableCell align="left">
                         <Status data={row[columns[4].field]} />
                       </TableCell> :
-                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{row[columns[4].field]}</TableCell>
+                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{columns[4] && row[columns[4].field]}</TableCell>
                     }
                     {
-                      columns[5].field === 'status' ? 
+                      columns[5] && columns[5].field === 'status' ? 
                       <TableCell align="left">
                         <Status data={row[columns[5].field]} />
                       </TableCell> :
-                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{row[columns[5].field]}</TableCell>
+                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{columns[5] && row[columns[5].field]}</TableCell>
                     }
                     {
-                      columns[6].field === 'status' ? 
+                      columns[6] && columns[6].field === 'status' ? 
                       <TableCell align="left">
                         <Status data={row[columns[6].field]} />
                       </TableCell> :
-                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{row[columns[6].field]}</TableCell>
+                    <TableCell align="left" className="text-[12px] text-[#374151] font-medium">{columns[6] && row[columns[6].field]}</TableCell>
                     }
                     </TableRow>
                 );
