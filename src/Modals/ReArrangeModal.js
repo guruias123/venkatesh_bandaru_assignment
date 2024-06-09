@@ -74,7 +74,7 @@ const ReArrangeModal = (props) => {
           <p className='text-[16px] font-medium'>Edit Columns</p>
           <p className='text-[#334155] font-normal'>Select the columns to rearrange</p>
           {/* columns */}
-          <div className='flex flex-col gap-3'>
+          <div className='flex flex-col gap-3 h-[50vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300'>
             {list.map((column, index) => {
               return(
                 <div key={index} 
